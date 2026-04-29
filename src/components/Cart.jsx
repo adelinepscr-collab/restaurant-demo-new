@@ -1,4 +1,4 @@
-export default function Cart({ cart, onRemove }) {
+export default function Cart({ cart, onRemove, onCheckout }) {
   // BUG #1: subtotal ignores quantity — should be item.price * item.quantity
   const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
 
@@ -47,7 +47,7 @@ export default function Cart({ cart, onRemove }) {
       <button
         className="checkout-btn"
         disabled={cart.length === 0}
-        onClick={() => alert("Order placed! Thank you.")}
+        onClick={onCheckout}
       >
         Place Order
       </button>

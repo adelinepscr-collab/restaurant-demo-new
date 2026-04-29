@@ -331,3 +331,265 @@ body {
   color: #a8a4a0;
   cursor: not-allowed;
 }
+
+/* ─── Payment Modal ───────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 39, 31, 0.55);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(26, 39, 31, 0.2);
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a271f;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+.modal-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.modal-step-centered {
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+/* Item list */
+.modal-item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-item-list--receipt {
+  width: 100%;
+}
+
+.modal-item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-item-emoji {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.modal-item-name {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a271f;
+}
+
+.modal-item-qty {
+  font-size: 0.8rem;
+  color: #9aaba0;
+  font-weight: 500;
+}
+
+.modal-item-price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1a271f;
+  flex-shrink: 0;
+}
+
+/* Totals */
+.modal-totals {
+  border-top: 1px solid #ede9e4;
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.modal-totals-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #6b7c71;
+  font-weight: 500;
+}
+
+.modal-totals-total {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a271f;
+  padding-top: 10px;
+  border-top: 1px solid #ede9e4;
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-btn-primary {
+  padding: 12px 22px;
+  background: #00c1b2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s;
+  letter-spacing: 0.1px;
+}
+
+.modal-btn-primary:hover:not(:disabled) {
+  background: #00a99c;
+}
+
+.modal-btn-primary:disabled {
+  background: #d8d4cf;
+  color: #a8a4a0;
+  cursor: not-allowed;
+}
+
+.modal-btn-secondary {
+  padding: 12px 20px;
+  background: white;
+  color: #1a271f;
+  border: 1.5px solid #d8d4cf;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.modal-btn-secondary:hover {
+  border-color: #00c1b2;
+  color: #00c1b2;
+}
+
+.modal-btn-full {
+  width: 100%;
+}
+
+/* Card form */
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7c71;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.card-input {
+  padding: 11px 14px;
+  border: 1.5px solid #d8d4cf;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #1a271f;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.card-input:focus {
+  border-color: #00c1b2;
+}
+
+.card-row {
+  display: flex;
+  gap: 12px;
+}
+
+.card-row .card-label {
+  flex: 1;
+}
+
+/* Processing */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 52px;
+  height: 52px;
+  border: 4px solid #e8f8f7;
+  border-top-color: #00c1b2;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 8px;
+}
+
+.processing-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a271f;
+}
+
+.processing-subtitle {
+  font-size: 0.8rem;
+  color: #9aaba0;
+}
+
+/* Success */
+.success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #00c1b2;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.success-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a271f;
+}
+
+.success-meta {
+  font-size: 0.8rem;
+  color: #9aaba0;
+  margin-bottom: 8px;
+}

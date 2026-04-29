@@ -2,11 +2,13 @@ import { useState } from "react";
 import { dishes } from "./data";
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
+import PaymentModal from "./components/PaymentModal";
 import "./App.css";
 
 export default function App() {
   const [cart, setCart] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [showPayment, setShowPayment] = useState(false);
 
   function addToCart(dish) {
     // BUG #5: always adds a new entry — should check if dish is already in cart and increment quantity
@@ -40,8 +42,15 @@ export default function App() {
           onCategoryChange={setSelectedCategory}
           onAddToCart={addToCart}
         />
-        <Cart cart={cart} onRemove={removeFromCart} />
+        <Cart cart={cart} onRemove={removeFromCart} onCheckout={() => setShowPayment(true)} />
       </main>
+      {showPayment && (
+        <PaymentModal
+          cart={cart}
+          onClose={() => setShowPayment(false)}
+          onSuccess={() => { setCart([]); setShowPayment(false); }}
+        />
+      )}
     </div>
   );
 }
