@@ -27,11 +27,19 @@ body {
   z-index: 10;
 }
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
 .app-header h1 {
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.5px;
   color: #00c1b2;
+  flex-shrink: 0;
 }
 
 .delivery-eta {
@@ -786,4 +794,83 @@ body {
   font-size: 0.8rem;
   color: #9aaba0;
   margin-bottom: 8px;
+}
+
+/* ─── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .header-brand {
+    gap: 8px;
+  }
+
+  .app-header h1 {
+    font-size: 1.05rem;
+  }
+
+  .delivery-eta {
+    padding: 4px 10px 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .app-main {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .menu {
+    padding: 20px 16px;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .price-filter-group,
+  .sort-group {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+  .dish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart {
+    width: 100%;
+    position: static;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid #e8e4df;
+    padding: 24px 16px;
+  }
+
+  .modal {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delivery-eta-text {
+    display: none;
+  }
+
+  .delivery-eta {
+    padding: 6px;
+    border-radius: 50%;
+  }
+
+  .card-row {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
