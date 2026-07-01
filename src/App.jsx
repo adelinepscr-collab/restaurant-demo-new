@@ -138,13 +138,13 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <div style={{display:"flex",alignItems:"center",gap:"12px"}}>
+        <div className="header-brand">
           <img src={`${import.meta.env.BASE_URL}deliveroo-logo.png`} alt="Deliveroo" height="36" />
           <h1>roo<span style={{color:"#1a271f"}}>food</span></h1>
           <span className="delivery-eta">
             <span className="eta-dot" />
             <span className="eta-icon">🛵</span>
-            Delivery in {deliveryInfo.etaMin}–{deliveryInfo.etaMax} min
+            <span className="delivery-eta-text">Delivery in {deliveryInfo.etaMin}–{deliveryInfo.etaMax} min</span>
           </span>
         </div>
         <div className="cart-badge-wrapper">
